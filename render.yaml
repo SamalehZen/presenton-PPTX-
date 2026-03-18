@@ -13,26 +13,11 @@ services:
         value: "true"
       - key: DISABLE_ANONYMOUS_TRACKING
         value: "true"
-      # ── LLM provider (uncomment ONE block) ──────────────
-      # -- Google Gemini (recommended: free API tier) --
       - key: LLM
         value: google
       - key: GOOGLE_API_KEY
-        sync: false  # you'll set this manually in Render dashboard
-      # - key: GOOGLE_MODEL
-      #   value: models/gemini-2.0-flash
-      # -- OpenAI --
-      # - key: LLM
-      #   value: openai
-      # - key: OPENAI_API_KEY
-      #   sync: false
-      # -- Anthropic --
-      # - key: LLM
-      #   value: anthropic
-      # - key: ANTHROPIC_API_KEY
-      #   sync: false
-      # ── Image provider (optional) ───────────────────────
-      # - key: IMAGE_PROVIDER
-      #   value: gemini_flash
-      # - key: PEXELS_API_KEY
-      #   sync: false
+        sync: false
+      - key: GOOGLE_MODEL
+        value: models/gemini-3.1-flash-lite-preview
+      - key: IMAGE_PROVIDER
+        value: nanobanana_2
