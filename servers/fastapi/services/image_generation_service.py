@@ -23,6 +23,7 @@ from utils.image_provider import (
     is_pixabay_selected,
     is_gemini_flash_selected,
     is_nanobanana_pro_selected,
+    is_nanobanana_2_selected,
     is_dalle3_selected,
     is_comfyui_selected,
 )
@@ -47,6 +48,8 @@ class ImageGenerationService:
             return self.generate_image_gemini_flash
         elif is_nanobanana_pro_selected():
             return self.generate_image_nanobanana_pro
+        elif is_nanobanana_2_selected():
+            return self.generate_image_nanobanana_2
         elif is_dalle3_selected():
             return self.generate_image_openai_dalle3
         elif is_gpt_image_1_5_selected():
@@ -180,6 +183,14 @@ class ImageGenerationService:
         """Generate image using NanoBanana Pro (gemini-3-pro-image-preview)."""
         return await self._generate_image_google(
             prompt, output_directory, "gemini-3-pro-image-preview"
+        )
+
+    async def generate_image_nanobanana_2(
+        self, prompt: str, output_directory: str
+    ) -> str:
+        """Generate image using Nano Banana 2 (gemini-3.1-flash-image-preview)."""
+        return await self._generate_image_google(
+            prompt, output_directory, "gemini-3.1-flash-image-preview"
         )
 
     async def get_image_from_pexels(self, prompt: str) -> str:

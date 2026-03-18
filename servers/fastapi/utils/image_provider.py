@@ -26,6 +26,10 @@ def is_nanobanana_pro_selected() -> bool:
     return ImageProvider.NANOBANANA_PRO == get_selected_image_provider()
 
 
+def is_nanobanana_2_selected() -> bool:
+    return ImageProvider.NANOBANANA_2 == get_selected_image_provider()
+
+
 def is_dalle3_selected() -> bool:
     return ImageProvider.DALLE3 == get_selected_image_provider()
 
